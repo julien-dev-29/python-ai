@@ -10,5 +10,6 @@ if len(sys.argv) > 1:
             result = "I'm Odd"
     except ValueError:
         result = "AssertionError: argument is not an integer"
-    
+else:
+    result = "AssertionError: no argument provided"
 print(result)
