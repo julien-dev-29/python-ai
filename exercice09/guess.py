@@ -29,7 +29,12 @@ def get_user_input():
 
     if guess == n:
         print("Congratulations, you've got it!")
-        print(f"You won in {attempts} attempts!")
+        if attemp == 1:
+            print("First try!") 
+        elif n == 42:
+            print("The answer to the ultimate question of life, the universe and everything is 42.Congratulations! You got it on your first try!")
+        else:
+            print(f"You won in {attempts} attempts!")
         return False
 
     elif guess < n:
