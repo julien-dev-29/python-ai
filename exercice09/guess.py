@@ -1,7 +1,7 @@
 import random
 
 n = random.randint(1, 99)
-attemp = 0
+attempts = 0
 
 def print_header():
     print("This is an interactive guessing game!")
@@ -9,10 +9,11 @@ def print_header():
     print("Type 'exit' to end the game.")
 
 def get_user_input():
-    global attemp
+    global attempts
     user_input = input("What's your guess between 1 and 99?")
 
     if user_input.lower() == "exit":
+        print("Goodbye!")
         return False
     
     try:
@@ -29,12 +30,16 @@ def get_user_input():
 
     if guess == n:
         print("Congratulations, you've got it!")
-        if attemp == 1:
+
+        if n == 42:
+                print("The answer to the ultimate question of life, the universe and everything is 42.")
+
+        if attempts == 1:
             print("First try!") 
-        elif n == 42:
-            print("The answer to the ultimate question of life, the universe and everything is 42.Congratulations! You got it on your first try!")
-        else:
+
+        elif attempts > 1:
             print(f"You won in {attempts} attempts!")
+
         return False
 
     elif guess < n:
